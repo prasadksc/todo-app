@@ -8,7 +8,7 @@ class ListItems extends Component {
         const { items, deleteItem, setItemUpdate } = this.props
         return items.map(item => (
             <div className="list" key={item.key}>
-                <p> <input type="text" id={item.key} onChange={(e) => setItemUpdate(e.target.value, item.key)} value={item.text} s />
+                <p> <input type="text" id={item.key} onChange={(e) => setItemUpdate(e.target.value, item.key)} value={item.text} />
                     <span> <RiCloseCircleLine
                         onClick={() => deleteItem(item.key)}
                         className='delete-icon'
@@ -18,9 +18,6 @@ class ListItems extends Component {
         ))
     }
 }
-
-
-
 
 
 export default ListItems;
