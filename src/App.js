@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ListItems from './listItems';
+import PropTypes from 'prop-types'
 import './App.css';
+
 
 
 
@@ -39,12 +41,15 @@ class App extends Component {
 
 
   setItemUpdate = (text, key) => {
-    const items = this.state.items.map(item => {
+    const items = this.state.items
+    items.map(item => {
       if (item.key === key) {
-        return item.text = text
+        item.text = text
       }
-      this.setState({ items: items })
+      this.setState({ items })
+      return item
     })
+
 
   }
 
@@ -72,5 +77,10 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  items: PropTypes.array
+}
+
 
 export default App;
