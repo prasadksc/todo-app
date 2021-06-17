@@ -39,8 +39,7 @@ class App extends Component {
 
 
   setItemUpdate = (text, key) => {
-    const items = this.state.items
-    items.map(item => {
+    const items = this.state.items.map(item => {
       if (item.key === key) {
         return item.text = text
       }
@@ -48,6 +47,7 @@ class App extends Component {
     })
 
   }
+
 
 
   deleteItem = key => {
