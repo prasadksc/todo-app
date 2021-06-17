@@ -49,8 +49,6 @@ class App extends Component {
       this.setState({ items })
       return item
     })
-
-
   }
 
 
