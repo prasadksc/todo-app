@@ -26,6 +26,8 @@ class App extends Component {
 
   addItem = e => {
     e.preventDefault()
+
+    // call the server and add new todo
     const newItem = this.state.currentitem
     if (newItem.text !== '') {
       const newitems = [...this.state.items, newItem]
@@ -41,6 +43,7 @@ class App extends Component {
 
 
   setItemUpdate = (text, key) => {
+    // call the server and update the new text
     const items = this.state.items
     items.map(item => {
       if (item.key === key) {
